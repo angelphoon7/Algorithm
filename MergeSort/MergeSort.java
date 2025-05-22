@@ -36,27 +36,20 @@ public class MergeSort {
         // Merge the temp arrays back into arr[left..right]
         while (i <= mid && j <= right) {
             if (temp[i] <= temp[j]) {
-                arr[k] = temp[i];
-                i++;
+                arr[k++] = temp[i++];
             } else {
-                arr[k] = temp[j];
-                j++;
+                arr[k++] = temp[j++];
             }
-            k++;
         }
 
         // Copy remaining elements of left subarray if any
         while (i <= mid) {
-            arr[k] = temp[i];
-            i++;
-            k++;
+            arr[k++] = temp[i++];
         }
 
         // Copy remaining elements of right subarray if any
         while (j <= right) {
-            arr[k] = temp[j];
-            j++;
-            k++;
+            arr[k++] = temp[j++];
         }
     }
 } 
